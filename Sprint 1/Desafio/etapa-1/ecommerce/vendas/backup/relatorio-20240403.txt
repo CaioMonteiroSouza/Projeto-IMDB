@@ -1,0 +1,14 @@
+2024/04/03 15:27
+Primeiro registro de venda: 2023/09/15
+Ultimo registro de venda: 2023/11/05
+Quantidade de itens unicos vendidos: 53
+id,produto,quantidade,preço,data
+1,Smartphone,2,899.99,15/09/2023
+2,Livro "A Guerra dos Tronos",3,29.99,16/09/2023
+3,Console de Jogos,1,399.99,17/09/2023
+4,Fones de Ouvido Bluetooth,4,69.99,18/09/2023
+5,Relógio Inteligente,5,149.99,19/09/2023
+6,Carregador Portátil,2,24.99,20/09/2023
+7,Panela Elétrica,1,79.99,21/09/2023
+8,Câmera Fotográfica,2,499.99,22/09/2023
+9,Teclado sem Fio,1,39.99,23/09/2023

@@ -1,0 +1,14 @@
+2024/04/04 15:27
+Primeiro registro de venda: 2024/01/05
+Ultimo registro de venda: 2024/03/18
+Quantidade de itens unicos vendidos: 75
+id,produto,quantidade,preço,data
+1,Notebook,2,1099.99,05/01/2024
+2,Fones de Ouvido Bluetooth,3,79.99,06/01/2024
+3,Smart TV 4K,1,799.99,07/01/2024
+4,Cafeteira Elétrica,4,49.99,08/01/2024
+5,Ferro de Passar Roupa,5,29.99,09/01/2024
+6,Teclado sem Fio,2,39.99,10/01/2024
+7,Mouse Óptico,1,14.99,11/01/2024
+8,Webcam HD,2,29.99,12/01/2024
+9,Carregador Portátil,1,24.99,13/01/2024

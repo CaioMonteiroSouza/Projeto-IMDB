@@ -1,0 +1,75 @@
+id,produto,quantidade,preço,data
+1,Notebook,2,1099.99,05/01/2024
+2,Fones de Ouvido Bluetooth,3,79.99,06/01/2024
+3,Smart TV 4K,1,799.99,07/01/2024
+4,Cafeteira Elétrica,4,49.99,08/01/2024
+5,Ferro de Passar Roupa,5,29.99,09/01/2024
+6,Teclado sem Fio,2,39.99,10/01/2024
+7,Mouse Óptico,1,14.99,11/01/2024
+8,Webcam HD,2,29.99,12/01/2024
+9,Carregador Portátil,1,24.99,13/01/2024
+10,Monitor LED,3,199.99,14/01/2024
+11,Impressora Multifuncional,1,149.99,15/01/2024
+12,Caixa de Som Bluetooth,2,39.99,16/01/2024
+13,Barbeador Elétrico,3,34.99,17/01/2024
+14,Depilador Elétrico,1,49.99,18/01/2024
+15,Aspirador de Pó Vertical,2,89.99,19/01/2024
+16,Tablet,1,299.99,20/01/2024
+17,Drone com Câmera HD,2,199.99,21/01/2024
+18,Relógio Inteligente,3,129.99,22/01/2024
+19,Console de Jogos,1,399.99,23/01/2024
+20,Kit de Ferramentas,4,29.99,24/01/2024
+21,Conjunto de Facas de Cozinha,1,39.99,25/01/2024
+22,Panela de Pressão Elétrica,2,69.99,26/01/2024
+23,Fritadeira sem Óleo,1,89.99,27/01/2024
+24,Panela Elétrica,3,44.99,28/01/2024
+25,Chaleira Elétrica,1,19.99,29/01/2024
+26,Jogo de Panelas Antiaderentes,2,59.99,30/01/2024
+27,Kit de Utensílios de Cozinha,1,29.99,31/01/2024
+28,Kit de Maquiagem Profissional,2,49.99,01/02/2024
+29,Paleta de Sombras,3,19.99,02/02/2024
+30,Base Líquida,1,14.99,03/02/2024
+31,Batom Matte,2,9.99,04/02/2024
+32,Kit de Pincéis para Maquiagem,1,24.99,05/02/2024
+33,Perfume Importado,3,69.99,06/02/2024
+34,Loção Hidratante Corporal,1,12.99,07/02/2024
+35,Shampoo e Condicionador,2,15.99,08/02/2024
+36,Protetor Solar FPS 50,1,19.99,09/02/2024
+37,Creme Anti-idade,2,29.99,10/02/2024
+38,Gel de Limpeza Facial,1,9.99,11/02/2024
+39,Escova Dental Elétrica,3,39.99,12/02/2024
+40,Enxaguante Bucal,1,7.99,13/02/2024
+41,Fio Dental,2,4.99,14/02/2024
+42,Escova de Cabelo Profissional,1,17.99,15/02/2024
+43,Shampoo Seco,2,8.99,16/02/2024
+44,Condicionador Sem Enxágue,1,11.99,17/02/2024
+45,Máscara Capilar,3,14.99,18/02/2024
+46,Secador de Cabelo Profissional,1,79.99,19/02/2024
+47,Prancha Alisadora,2,49.99,20/02/2024
+48,Babyliss,1,34.99,21/02/2024
+49,Modelador de Cachos,3,24.99,22/02/2024
+50,Tinta para Cabelo,1,9.99,23/02/2024
+51,Cortador de Unhas,2,5.99,24/02/2024
+52,Alicate para Cutículas,1,7.99,25/02/2024
+53,Removedor de Esmalte,3,3.99,26/02/2024
+54,Base para Unhas,1,4.99,27/02/2024
+55,Top Coat,2,6.99,28/02/2024
+56,Esmalte,3,2.99,29/02/2024
+57,Lixa de Unha,1,1.99,01/03/2024
+58,Hidratante para Cutículas,2,5.99,02/03/2024
+59,Creme para as Mãos,1,4.99,03/03/2024
+60,Esfoliante Corporal,3,8.99,04/03/2024
+61,Loção Corporal Hidratante,1,9.99,05/03/2024
+62,Sabonete Líquido,2,3.99,06/03/2024
+63,Gel de Banho,1,5.99,07/03/2024
+64,Desodorante Roll-on,3,2.99,08/03/2024
+65,Desodorante Spray,1,4.99,09/03/2024
+66,Perfume Feminino,2,49.99,10/03/2024
+67,Perfume Masculino,1,39.99,11/03/2024
+68,Perfume Unissex,3,29.99,12/03/2024
+69,Perfume para Cabelos,1,14.99,13/03/2024
+70,Perfume para Ambientes,2,19.99,14/03/2024
+71,Água de Colônia,3,9.99,15/03/2024
+72,Loção Pós-barba,1,7.99,16/03/2024
+73,Sabonete em Barra,2,2.99,17/03/2024
+74,Gel de Barbear,1,5.99,18/03/2024

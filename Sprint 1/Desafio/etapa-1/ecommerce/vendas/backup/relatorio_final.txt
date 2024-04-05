@@ -1,0 +1,42 @@
+2024/04/02 15:27
+Primeiro registro de venda: 2023/01/01
+Ultimo registro de venda: 2023/03/27
+Quantidade de itens unicos vendidos: 66
+id,produto,quantidade,preço,data
+1,camiseta,2,29.90,01/01/2023
+2,calça,5,80.00,02/01/2023
+3,sapato,3,100.00,03/01/2023
+4,meia,20,5.00,04/01/2023
+5,cinto,8,15.00,05/01/2023
+6,camisa,7,40.00,06/01/2023
+7,bermuda,6,50.00,07/01/2023
+8,tênis,4,120.00,08/01/2023
+9,bone,12,10.00,09/01/2023
+2024/04/03 15:27
+Primeiro registro de venda: 2023/09/15
+Ultimo registro de venda: 2023/11/05
+Quantidade de itens unicos vendidos: 53
+id,produto,quantidade,preço,data
+1,Smartphone,2,899.99,15/09/2023
+2,Livro "A Guerra dos Tronos",3,29.99,16/09/2023
+3,Console de Jogos,1,399.99,17/09/2023
+4,Fones de Ouvido Bluetooth,4,69.99,18/09/2023
+5,Relógio Inteligente,5,149.99,19/09/2023
+6,Carregador Portátil,2,24.99,20/09/2023
+7,Panela Elétrica,1,79.99,21/09/2023
+8,Câmera Fotográfica,2,499.99,22/09/2023
+9,Teclado sem Fio,1,39.99,23/09/2023
+2024/04/04 15:27
+Primeiro registro de venda: 2024/01/05
+Ultimo registro de venda: 2024/03/18
+Quantidade de itens unicos vendidos: 75
+id,produto,quantidade,preço,data
+1,Notebook,2,1099.99,05/01/2024
+2,Fones de Ouvido Bluetooth,3,79.99,06/01/2024
+3,Smart TV 4K,1,799.99,07/01/2024
+4,Cafeteira Elétrica,4,49.99,08/01/2024
+5,Ferro de Passar Roupa,5,29.99,09/01/2024
+6,Teclado sem Fio,2,39.99,10/01/2024
+7,Mouse Óptico,1,14.99,11/01/2024
+8,Webcam HD,2,29.99,12/01/2024
+9,Carregador Portátil,1,24.99,13/01/2024
