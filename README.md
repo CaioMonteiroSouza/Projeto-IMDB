@@ -15,6 +15,13 @@ Sobre meus hobbies, sou apaixonado por musica, livros e jogos, normalmente em me
     * Comandos basicos de Git
     * Como criar e administrar um Repositorio
 
+### Sprint 2:
+* SQL
+    * Comandos basicos 
+    * querys
+    * criar/deletar colunas/linhas/tabelas
+
 ## Sprints 
 
 1. [Sprint 1](Sprint%201/README.md)
+1. [Sprint 1](Sprint%202/README.md)
