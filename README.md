@@ -1,5 +1,7 @@
 ## Apresentação
 
+![foto perfil](https://avatars.githubusercontent.com/u/26350650?v=4)
+
 Olá, sou Caio Eduardo Monteiro de Souza, moro na cidade de Franca - SP, sou estudante de **Análise e Desenvolvimento de Sistemas da Fatec Franca** e atualmente estou no terceiro semestre e esta sendo minha primeira experiência na área de tecnologia.
 
 Sobre meus hobbies, sou apaixonado por musica, livros e jogos, normalmente em meu tempo livre estou lendo, jogando ou escutando musica.
@@ -24,4 +26,4 @@ Sobre meus hobbies, sou apaixonado por musica, livros e jogos, normalmente em me
 ## Sprints 
 
 1. [Sprint 1](Sprint%201/README.md)
-1. [Sprint 1](Sprint%202/README.md)
+1. [Sprint 2](Sprint%202/README.md)
