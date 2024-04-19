@@ -35,3 +35,6 @@
 
 # Certificados
 
+[AWS](certificados/13660_3_5302791_1713556532_AWS%20Course%20Completion%20Certificate.pdf)
+
+
