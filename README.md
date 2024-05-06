@@ -23,7 +23,15 @@ Sobre meus hobbies, sou apaixonado por musica, livros e jogos, normalmente em me
     * querys
     * criar/deletar colunas/linhas/tabelas
 
+### Sprint 3
+* Python
+    * Como funciona
+    * Programação orientada a objetos
+    * ETL
+    * Pandas e Matplotlib
+
 ## Sprints 
 
 1. [Sprint 1](Sprint%201/README.md)
-1. [Sprint 2](Sprint%202/README.md)
+2. [Sprint 2](Sprint%202/README.md)
+3. [Sprint 3](Sprint%203/README.md)
