@@ -40,6 +40,6 @@
 
 # Certificados
 
-![AWS](Certificados/16197_3_5302791_1714774736_AWS%20Course%20Completion%20Certificate.pdf)
+[AWS](Certificados/16197_3_5302791_1714774736_AWS%20Course%20Completion%20Certificate.pdf)
 
 
