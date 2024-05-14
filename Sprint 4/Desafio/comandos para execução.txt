@@ -1,0 +1,7 @@
+=> docker build -t desafio .
+=> docker run desafio
+
+
+//Utilizar dentro da pasta Mascara dados onde esta o arquivo dockerfile
+=> docker build -t mascarar-dados .
+=> docker run -it mascarar-dados
