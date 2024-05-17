@@ -34,6 +34,10 @@
 
 # Certificados
 
+[certificadoAWS1](Certificado/13246_3_5302791_1715802599_AWS%20Course%20Completion%20Certificate.pdf)
+
+[certificadoAWS2](Certificado/1851_3_5302791_1715798334_AWS%20Course%20Completion%20Certificate.pdf)
+
 
 
 
