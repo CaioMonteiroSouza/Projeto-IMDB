@@ -11,7 +11,7 @@
 # Evidências
 
 ## Build da imagem
-![Build Da Imagem](Evidencias\Build_da_imagem.png)
+![Build Da Imagem](Evidencias/Build_da_imagem.png)
 
 ## Imagem salva
 ![Imagem Salva](Evidencias/Imagem_Salva.png)
