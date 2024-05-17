@@ -30,8 +30,20 @@ Sobre meus hobbies, sou apaixonado por musica, livros e jogos, normalmente em me
     * ETL
     * Pandas e Matplotlib
 
+### Sprint 4
+* Python
+    * Programação funcional
+* Docker
+    * O que é Docker
+    * Containers e Imagens
+    * Como criar containers e imagens
+    * Docker swarm e kubernets
+* AWS
+    * criação de VMs e BD
+
 ## Sprints 
 
 1. [Sprint 1](Sprint%201/README.md)
 2. [Sprint 2](Sprint%202/README.md)
 3. [Sprint 3](Sprint%203/README.md)
+4. [Sprint 4](Sprint%204/README.md)
