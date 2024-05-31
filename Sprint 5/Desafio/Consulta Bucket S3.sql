@@ -1,5 +1,5 @@
 SELECT
-	SUBSTRING(CAST(UTCNOW() AS STRING), 0, 5),
+	SUBSTRING(CAST(UTCNOW() AS STRING), 0, 11),
 	COUNT(*) AS VOOS_COM_FATALIDADES,  
 	SUM((CASE 
 		WHEN s.Lesoes_Fatais_Passageiros IS NULL OR s.Lesoes_Fatais_Passageiros = 'null' OR s.Lesoes_Fatais_Passageiros = '0' THEN 0 
