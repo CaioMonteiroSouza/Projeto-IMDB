@@ -1,5 +1,4 @@
 import boto3
-import os
 
 def query_s3_csv(bucket_name, object_key, sql_expression):
     s3 = boto3.client('s3')
@@ -26,16 +25,12 @@ def query_s3_csv(bucket_name, object_key, sql_expression):
     for event in response['Payload']:
         if 'Records' in event:
             print(event['Records']['Payload'].decode('utf-8'))
-        elif 'Stats' in event:
-            print("Processed {} bytes".format(event['Stats']['Details']['BytesProcessed']))
-        elif 'End' in event:
-            print("Query finished")
 
 bucket_name = 'caio-desafiosprint5'
 object_key = 'V_OCORRENCIA_AMPLA.csv'
 sql_expression = """
                 SELECT
-                    SUBSTRING(CAST(UTCNOW() AS STRING), 0, 5),
+                    SUBSTRING(CAST(UTCNOW() AS STRING), 0, 11),
                     COUNT(*) AS VOOS_COM_FATALIDADES,  
                     SUM((CASE 
                          WHEN s.Lesoes_Fatais_Passageiros IS NULL OR s.Lesoes_Fatais_Passageiros = 'null' OR s.Lesoes_Fatais_Passageiros = '0' THEN 0 
