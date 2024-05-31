@@ -40,3 +40,4 @@ Uma função de String: SUBSTRING()
 Onde o primeiro atributo representa a data em que foi feita a consulta.
 O segundo representa a quantidade de acidentes com vitimas fatais.
 O terceiro representa quantos dos acidentes com vitimas fatais tiveram passageiros como vitimas.
+
