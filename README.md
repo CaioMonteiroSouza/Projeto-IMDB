@@ -41,9 +41,18 @@ Sobre meus hobbies, sou apaixonado por musica, livros e jogos, normalmente em me
 * AWS
     * criação de VMs e BD
 
+### Sprint 5
+
+* AWS
+    * Criação de Buckets
+    * Boto 3
+    * S3select
+    * Consumir dados do bucket
+
 ## Sprints 
 
 1. [Sprint 1](Sprint%201/README.md)
 2. [Sprint 2](Sprint%202/README.md)
 3. [Sprint 3](Sprint%203/README.md)
 4. [Sprint 4](Sprint%204/README.md)
+5. [Sprint 5](Sprint%205/README.md)
