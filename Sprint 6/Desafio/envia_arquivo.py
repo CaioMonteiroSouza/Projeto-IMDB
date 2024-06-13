@@ -23,9 +23,6 @@ def upload_file(file_name, bucket_name, path):
         s3.upload_file(file_name, bucket_name, path)
         print(f'arquivo: {file_name} enviado com sucesso')
         return True
-    except FileNotFoundError:
-        print("Arquivo não encontrado")
-        return False
     except NoCredentialsError:
         print("Sem credenciais")
         return False
