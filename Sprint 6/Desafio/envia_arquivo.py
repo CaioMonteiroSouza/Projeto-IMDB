@@ -18,7 +18,6 @@ s3 = boto3.client('s3',
                     )
 
 def upload_file(file_name, bucket_name, path):
-
     try:
         s3.upload_file(file_name, bucket_name, path)
         print(f'arquivo: {file_name} enviado com sucesso')
