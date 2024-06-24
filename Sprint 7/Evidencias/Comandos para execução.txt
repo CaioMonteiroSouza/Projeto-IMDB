@@ -1,0 +1,10 @@
+from pyspark import SparkConf, SparkContext
+from datetime import date
+conf = SparkConf().setAppName("WordCount")
+filepath = 'README.md'
+file = sc.textFile(filepath)
+counts = (file.flatMap(lambda line: line.split()).map(lambda word: (word,1)).reduceByKey(lambda a, b: a + b))
+counts.saveAsTextFile(f'./contagem_palavras{date.today()}/')
+results = counts.collect()
+for word, count in results: print(f'{word}: {count}')
+sc.stop()
