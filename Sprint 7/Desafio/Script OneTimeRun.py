@@ -8,15 +8,20 @@ import boto3
 
 load_dotenv()
 
-AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
-AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
-AWS_DEFAULT_REGION = os.getenv("AWS_DEFAULT_REGION")
-AWS_SESSION_TOKEN = os.getenv("AWS_SESSION_TOKEN")
+AWS_ACCESS_KEY_ID = os.getenv("KEY_ID")
+AWS_SECRET_ACCESS_KEY = os.getenv("ACCESS_KEY")
+AWS_DEFAULT_REGION = os.getenv("REGION")
+AWS_SESSION_TOKEN = os.getenv("TOKEN")
 
 API_KEY = os.getenv("API_KEY")
 TOKEN_LEITURA = os.getenv("TOKEN_LEITURA")
 
-s3 = boto3.client('s3')
+s3 = boto3.client('s3',
+                aws_access_key_id=AWS_ACCESS_KEY_ID,
+                aws_secret_access_key=AWS_SECRET_ACCESS_KEY,
+                region_name=AWS_DEFAULT_REGION,
+                aws_session_token=AWS_SESSION_TOKEN
+                )
 
 now = datetime.now()
 day = now.day
@@ -101,7 +106,7 @@ def get_popular_series():
     return False
 
 
-def save_to_s3(data, key, bucket_name='datalakecaio'):
+def save_to_s3(data, bucket_name, key):
      s3.put_object(Body=json.dumps(data), Bucket=bucket_name, Key=key)
 
 
@@ -112,8 +117,8 @@ def lambda_handler():
     df = pd.read_csv(csv_file['Body'], sep='|', low_memory=False)
 
     s3.put_object(Bucket=bucket_name, Key=f'Raw/TMDB/JSON/Top_Rated/{year}/{month}/{day}/')
-    s3.put_object(Bucket=bucket_name, Key=f'Raw/TMDB/JSON/Jsons/Popular/{year}/{month}/{day}/')
-    s3.put_object(Bucket=bucket_name, Key=f'Raw/TMDB/JSON/Jsons/Complementares/{year}/{month}/{day}/')
+    s3.put_object(Bucket=bucket_name, Key=f'Raw/TMDB/JSON/Popular/{year}/{month}/{day}/')
+    s3.put_object(Bucket=bucket_name, Key=f'Raw/TMDB/JSON/Complementares/{year}/{month}/{day}/')
 
     genero = 'Animation'
     ids_filtrados = df[df['genero'] == genero]['id']
@@ -122,3 +127,5 @@ def lambda_handler():
     get_top_rated_series()
 
     get_popular_series()
+
+lambda_handler()
