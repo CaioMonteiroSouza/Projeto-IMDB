@@ -124,6 +124,8 @@ def lambda_handler():
     ids_filtrados = df[df['genero'] == genero]['id']
     ids_filtrados = list(set(ids_filtrados))
 
+    send_requisitions(ids_filtrados)
+
     get_top_rated_series()
 
     get_popular_series()
