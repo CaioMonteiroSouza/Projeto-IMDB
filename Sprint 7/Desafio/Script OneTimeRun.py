@@ -126,8 +126,4 @@ def lambda_handler():
 
     send_requisitions(ids_filtrados)
 
-    get_top_rated_series()
-
-    get_popular_series()
-
 lambda_handler()
