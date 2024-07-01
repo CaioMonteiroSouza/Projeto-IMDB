@@ -110,7 +110,7 @@ def save_to_s3(data, bucket_name, key):
      s3.put_object(Body=json.dumps(data), Bucket=bucket_name, Key=key)
 
 
-def lambda_handler():
+def lambda_handler(event, context):
     bucket_name = 'datalakecaio'
     csv_key = 'Raw/Local/CSV/Series/2024/06/12/series.csv'
     csv_file = s3.get_object(Bucket=bucket_name, Key=csv_key)
@@ -125,5 +125,3 @@ def lambda_handler():
     ids_filtrados = list(set(ids_filtrados))
 
     send_requisitions(ids_filtrados)
-
-lambda_handler()
