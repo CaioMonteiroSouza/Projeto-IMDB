@@ -1,1 +1,2 @@
 Sprint[[:space:]]6/Desafio/data/* filter=lfs diff=lfs merge=lfs -text
+Sprint[[:space:]]8/Exercicios/Gerador[[:space:]]de[[:space:]]dados/nomes_aleatorios.txt filter=lfs diff=lfs merge=lfs -text
