@@ -56,6 +56,7 @@ df_nomes = df_nomes.withColumn("AnoNascimento",
 
 df_select = df_nomes.filter(df_nomes["AnoNascimento"] >= 2000).select("Nomes", "Escolaridade", "Pais", "AnoNascimento")
 
+df_select.show(100)
 
 # ETAPA 7
 
@@ -105,7 +106,9 @@ df_geracao = spark.sql("""
                 COUNT(*) AS Quantidade
             FROM pessoas
             GROUP BY Pais, Geracao
-            ORDER BY Pais, Geracao, Quantidade
                     """)
+
+
+df_geracao = df_geracao.orderBy("Pais", "Geracao", "Quantidade")
 
 df_geracao.show()

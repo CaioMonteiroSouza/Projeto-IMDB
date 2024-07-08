@@ -63,7 +63,7 @@ Utilizo algo parecido com a etapa anterior apenas alterando os valores que devem
 
 ![alt text](/Sprint%208/Evidencias/image-4.png)
 
-Utilizo essa conta matematica para gerar as datas aleatoriamente
+Utilizo essa conta matematica para gerar as datas aleatoriamente, que funciona da seguinte maneira, o rand() gera um numero aleatorio entre 0 e 1 e multiplica pela quantidade de anos possiveis entre a data minima e maxima. após isso somo 1945 no resultado e arredondo para assim obter um ano aleatorio.
 
 ![resultado](/Sprint%208/Evidencias/Execução%20com%20coluna%20de%20ano%20-%20exercicio%20spark.png)
 
@@ -71,7 +71,7 @@ Utilizo essa conta matematica para gerar as datas aleatoriamente
 
 ![alt text](/Sprint%208/Evidencias/image-5.png)
 
-Utilizo um filter e logo após o select para filtre as pessoas que nasceram neste século
+Utilizo um filter e logo após o select para filtre as pessoas que nasceram neste século (nas primeiras tentativas tives problemas de utilizar as funções pois o select deve ser utilizado após o filter)
 
 ![resultado](/Sprint%208/Evidencias/pessoas%20que%20nasceram%20neste%20seculo%20-%20exercicio%20spark.png)
 
@@ -103,7 +103,7 @@ Na etapa 9 deveria fazer o mesmo que na anterior, porem utilizando o Spark SQL
 
 ![alt text](/Sprint%208/Evidencias/image-9.png)
 
-Na etapa 10, deveria utilizar o sparkSQL para obter a quantidade que cada pais tem de cada uma das gerações, para isso fiz uma consulta SQL que ja ordenava e agrupava, e em seguida armazenei para um novo dataset e utilizei o metodo show para mostrar o resultado
+Na etapa 10, deveria utilizar o sparkSQL para obter a quantidade que cada pais tem de cada uma das gerações, para isso fiz uma consulta SQL que ja agrupava, e em seguida armazenei para um novo dataset e utilizei a função orderBy para agrupar conforme foi pedido no exercicio, e logo após utilizei o show para obter o resultado a seguir:
 
 ![resultado](/Sprint%208/Evidencias/Resultado%20ultima%20query%20-%20exercicio%20Spark.png)
 
