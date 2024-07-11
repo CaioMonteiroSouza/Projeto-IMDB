@@ -11,6 +11,7 @@
     * Nota media por país de produção
     * Quantidade de series por país
     * pais com mais series no top 10
+    * genero dos atores para cada profissão
 
 # Exercicios
 
