@@ -49,6 +49,22 @@ Sobre meus hobbies, sou apaixonado por musica, livros e jogos, normalmente em me
     * S3select
     * Consumir dados do bucket
 
+### Sprint 6 
+
+* Inicio do desafio final
+* Data lakes
+    * Camada Raw e como enviar arquivos para o bucket AWS
+
+### Sprint 7
+
+* Continuação desafio final
+* Consumir dados de api e enviar direto ao Data Lake
+
+### Sprint 8
+
+* Continuação desafio final
+* Promover dados a camada trusted utilizando AWS Glue
+
 ## Sprints 
 
 1. [Sprint 1](Sprint%201/README.md)
@@ -57,3 +73,5 @@ Sobre meus hobbies, sou apaixonado por musica, livros e jogos, normalmente em me
 4. [Sprint 4](Sprint%204/README.md)
 5. [Sprint 5](Sprint%205/README.md)
 6. [Sprint 6](/Sprint%206/README.md)
+7. [Sprint 7](/Sprint%207/README.md)
+8. [Sprint 8](/Sprint%208/README.md)
