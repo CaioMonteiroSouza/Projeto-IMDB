@@ -1,14 +1,16 @@
 # Perguntas:
     * Qual os 10 series de animação mais bem avaliadas
     * Qual o ano que mais sairam series de animação
-    * Nota media de series de animação
-    * primeira series de animação
     * media de episodios por serie de animação
+    * media de episodios por serie de animação com notas altas
     * quantidade de series de animação lançadas por ano 
     * Porcetagem de linguagem das series de animação
     * Nota media por linguagem nas series de animação
     * Quantidade media de temporadas nas series com alta avaliação
     * Quantidade media de temporadas geral
+    * Nota media por país de produção
+    * Quantidade de series por país
+    * pais com mais series no top 10
 
 # Exercicios
 
