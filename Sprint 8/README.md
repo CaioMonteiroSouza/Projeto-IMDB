@@ -212,4 +212,6 @@ df_final.write.parquet(target_path + "/df_final")
 job.commit()
 ```
 
+![arquivos salvos](/Sprint%208/Evidencias/Desafio%20-%20Arquivos%20salvos%20em%20suas%20determinadas%20pastas.png)
 
+![exemplo](/Sprint%208/Evidencias/Desafio%20-%20Exemplo%20de%20como%20os%20arquivos%20estão%20salvos.png)
