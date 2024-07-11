@@ -1,5 +1,5 @@
 # Perguntas:
-    * Qual os 10 series de animação mais bem avaliados
+    * Qual os 10 series de animação mais bem avaliadas
     * Qual o ano que mais sairam series de animação
     * Nota media de series de animação
     * primeira series de animação
@@ -108,3 +108,108 @@ Na etapa 10, deveria utilizar o sparkSQL para obter a quantidade que cada pais t
 ![resultado](/Sprint%208/Evidencias/Resultado%20ultima%20query%20-%20exercicio%20Spark.png)
 
 e assim finalizei todas as etapas deste exercicio
+
+# Desafio
+
+Nessa estapa do desafio final deveria criar um Job no AWS Glue para promover os dados do CSV e dos arquivos que vieram da API do TMDB para a camada trusted. Para isso deveriamos criar 2 jobs, um para o csv e outro para os json. Comecei pela criação do Job do CSV.
+
+## Job_Csv
+
+O script completo pode ser encontrado clicando [aqui](/Sprint%208/Desafio/Job_Csv.py)
+
+A primeira etapa a ser feita foi criar um Script Spark no AWS Glue, após isso configurei o Job como foi pedido nas instruções do desafio
+
+![configurações](/Sprint%208/Evidencias/Desafio%20-%20Configurações%20Job%20CSV.png)
+
+após isso comecei a desenvolver meu codigo e a primeira etapa foi definir os caminhos para acessar os arquivos e salvar os arquivos, os defini utilizando os job parameters disponiveis no AWS Glue
+
+![job_parameter](/Sprint%208/Evidencias/Desafio%20-%20Job%20parameter%20CSV.png)
+
+e defini esses jobs no proprio script:
+
+```
+args = getResolvedOptions(sys.argv, ['JOB_NAME', 'S3_INPUT_PATH', 'S3_TARGET_PATH'])
+
+sc = SparkContext()
+glueContext = GlueContext(sc)
+spark = glueContext.spark_session
+job = Job(glueContext)
+job.init(args['JOB_NAME'], args)
+
+source_file = args['S3_INPUT_PATH']
+target_path = args['S3_TARGET_PATH']
+```
+
+em seguida leio o arquivo em dynamic frame e o transformo em um dataframe para poder utilizar o SparkSQL com mais facilidade
+
+```
+dynamic_frame = glueContext.create_dynamic_frame.from_options(
+    "s3",
+    {
+        "paths": [
+            source_file
+        ]
+    },
+    "csv",
+    {"withHeader": True, "separator":"|"},
+    )
+
+df = dynamic_frame.toDF()
+```
+
+em seguida eu aplico um drop em todas as linhas em que as colunas que eu utilizaria estariam vazias, e após isso aplico um filtro para que todos os resultados remanescentes no arquivo sejam do genero de animação.
+
+```
+df = df.na.drop(subset=["nomeArtista", "generoArtista", "anoNascimento", "anoFalecimento"])
+
+genero = 'Animation'
+df = df.filter(df['genero'] == genero)
+```
+
+Após isso faço 2 tabelas, para que eu consigo ter todas as profissões de um determinado artistia sem que passe uma lista para a camada trusted (Passar a lista em si não estaria errado, porém ao consultar o monitor da sprint, ele me recomendou ja passar os dados separados para facilitar nas proximas etapas.) A maneira como essas tabelas funcionas é da seguinte maneira: tenho um tabela com as profissões e seus codigos, e uma tabela relacionando o nome do artista com o codigo das profissões dele.
+
+```
+profissoes_df = df.select(explode(split(df['profissao'], ',')).alias('nome_profissao')).distinct()
+
+profissoes_df = profissoes_df.filter(col("nome_profissao") != "")
+
+windowSpec = Window.orderBy("nome_profissao") 
+
+profissoes_df = profissoes_df.withColumn("profissao_id", row_number().over(windowSpec))
+
+artista_profissao_df = (
+    df.select(
+        col("nomeArtista").alias("nome"),
+        explode(split(col("profissao"), ",")).alias("nome_profissao"),
+    )
+    .join(profissoes_df, on="nome_profissao", how="inner")
+    .select("nome", "profissao_id")
+)
+```
+
+Após isso defini a tabela onde conteria os dados dos artistas, que conteria o nome do artista, o genero, ano de nascimento e falecimento (Tive que aplicar um filtro nas colunas Ano Nascimento e Ano falecimento pois alguns valores estavam como \N), após isso apliquei um filtro para que o genero ficasse no formato: M e F, ja que no csv original os dados estão como Actor e Actress
+
+```
+df_final = df.select(df['nomeArtista'], df['generoArtista'], df['anoNascimento'], df['anoFalecimento'])
+
+df_final = df_final.filter(col("anoNascimento") != r"\N")
+df_final = df_final.filter(col("anoFalecimento") != r"\N")
+
+df_final = df_final.withColumn(
+            "generoArtista",
+            when((df_final["generoArtista"] == "actor"), "M")
+            .when((df_final["generoArtista"] == "actress"), "F")
+            )
+```
+
+Após isso salvei os arquivos como Parquet na camada trusted do bucket separados por uma pasta para cada uma das tabelas parquet, para evitar que os dados sejam sobreescritos por outros, além de ter melhor organização, após isso utilizo um commit para finalizar o Script
+
+```
+profissoes_df.write.parquet(target_path + "/profissoes_df")
+artista_profissao_df.write.parquet(target_path + "/artista_profissao_df")
+df_final.write.parquet(target_path + "/df_final")
+
+job.commit()
+```
+
+
