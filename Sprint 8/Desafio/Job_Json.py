@@ -79,8 +79,8 @@ df_spark_top = df_spark_top.select(
     "poster_path"
     )
 
-df_spark_comp.repartition(1).write.mode("overwrite").parquet("s3://datalakecaio/Trusted/JSON/dt=2024-07-12/")
+df_spark_comp.repartition(1).write.mode("overwrite").parquet("s3://datalakecaio/Trusted/Complementares/dt=2024-07-15/complementar_1/")
 
-df_spark_top.repartition(1).write.mode("overwrite").parquet("s3://datalakecaio/Trusted/JSON/dt=2024-07-12/top_rated/")
+df_spark_top.repartition(1).write.mode("overwrite").parquet("s3://datalakecaio/Trusted/top_rated/dt=2024-07-15/top_rated_1/")
 
 job.commit()
