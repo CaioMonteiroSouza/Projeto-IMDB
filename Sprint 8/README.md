@@ -112,6 +112,10 @@ Na etapa 10, deveria utilizar o sparkSQL para obter a quantidade que cada pais t
 
 e assim finalizei todas as etapas deste exercicio
 
+## TMDB
+
+Seguindo a instrução do monitor, por ja ter utilizado a API do TMDB na sprint anterior, não precisamos fazer este exercicio
+
 # Desafio
 
 Nessa estapa do desafio final deveria criar um Job no AWS Glue para promover os dados do CSV e dos arquivos que vieram da API do TMDB para a camada trusted. Para isso deveriamos criar 2 jobs, um para o csv e outro para os json. Comecei pela criação do Job do CSV.
@@ -347,3 +351,10 @@ df_spark_top.repartition(1).write.mode("overwrite").parquet("s3://datalakecaio/T
 job.commit()
 ```
 
+## Data base e crawlers
+
+Após conversar com colegas de squad e recomendação ao monitor criei um crawler que ja salva-va os dados em um banco de dados Athena
+
+![crawler](/Sprint%208/Evidencias/Desafio%20-%20criação%20e%20execução%20do%20crawler.png)
+
+![athena](/Sprint%208/Evidencias/Desafio-%20tabelas%20no%20athena.png)
