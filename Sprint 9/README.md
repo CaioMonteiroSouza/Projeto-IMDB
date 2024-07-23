@@ -209,3 +209,8 @@ tabela_fato_ator_profissao.repartition(1).write.mode("overwrite").parquet(target
 df_dim_profissao.repartition(1).write.mode("overwrite").parquet(target_path + "Atores/Dim_Profissão/")
 df_dim_ator.repartition(1).write.mode("overwrite").parquet(target_path + "Atores/Dim_Ator/")
 ```
+
+assim finalizo a modelagem dimensional
+
+![arquivo_salvo](/Sprint%209/Evidencias/Desafio%20-%20Arquivo%20salvo%20no%20Bucket.png)
+(exemplo de um arquivo que foi salvo corretamento)
