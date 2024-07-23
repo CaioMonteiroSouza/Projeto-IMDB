@@ -1,9 +1,24 @@
-from pyspark.sql import SparkSession
+import sys
+from awsglue.transforms import * # type: ignore
+from awsglue.utils import getResolvedOptions # type: ignore
+from pyspark.context import SparkContext
+from awsglue.context import GlueContext # type: ignore
+from awsglue.job import Job # type: ignore
 from pyspark.sql.functions import monotonically_increasing_id, year, month, dayofmonth
 
-spark = SparkSession.builder \
-    .appName("ExemploPySpark") \
-    .getOrCreate()
+## @params: [JOB_NAME]
+args = getResolvedOptions(sys.argv, ['JOB_NAME', 'S3_INPUT_PATH_COMP', 'S3_INPUT_PATH_TOP', 'S3_TARGET_PATH'])
+
+sc = SparkContext()
+glueContext = GlueContext(sc)
+spark = glueContext.spark_session
+job = Job(glueContext)
+job.init(args['JOB_NAME'], args)
+
+source_file_comp = args['S3_INPUT_PATH_COMP']
+source_file_top= args['S3_INPUT_PATH_TOP']
+target_path = args['S3_TARGET_PATH']
+
 
 def adicionaID(df_dim, name):
     """
@@ -32,8 +47,14 @@ def transformar_dataframe(df, col_data, nome_col_id):
         .withColumn("Dia", dayofmonth(df[col_data].cast("date")))
 
     return df
+    
+dynamicFrame_comp = glueContext.create_dynamic_frame.from_options(
+    connection_type = "s3", 
+    connection_options = {"paths": [source_file_comp]}, 
+    format = "parquet"
+)
 
-df = spark.read.parquet("../Arquivos/Series_para_modelar/part-00000-a0677587-cf84-4b6c-842e-55ea74bd0efd-c000.snappy.parquet")
+df = dynamicFrame_comp.toDF()
 
 df_dim_serie_comp = df.select("name", "overview").distinct()
 df_dim_serie_comp = adicionaID(df_dim_serie_comp, "Serie")
@@ -103,10 +124,13 @@ tabela_fato_comp = (
     )
 )
 
+dynamicFrame_top = glueContext.create_dynamic_frame.from_options(
+    connection_type = "s3", 
+    connection_options = {"paths": [source_file_top]}, 
+    format = "parquet"
+)
 
-print("--------")
-
-df_top = spark.read.parquet("../Arquivos/Series_para_modelar/part-00000-5347e5e0-7803-4aaa-a844-08a33734b702-c000.snappy.parquet")
+df_top = dynamicFrame_top.toDF()
 
 df_dim_serie_top = df_top.select("name", "overview").distinct()
 df_dim_serie_top = adicionaID(df_dim_serie_top, "SerieTop")
@@ -149,13 +173,11 @@ tabela_fato_top = (
 )
 
 
-print("----")
+df_final = spark.read.parquet("s3://datalakecaio/Trusted/CSV/df_final/")
 
-df_final = spark.read.parquet("../Arquivos/Series_para_modelar/df_final/")
+df_profissoes = spark.read.parquet("s3://datalakecaio/Trusted/CSV/profissoes_df/")
 
-df_profissoes = spark.read.parquet("../Arquivos/Series_para_modelar/profissao/")
-
-df_artista_profissao = spark.read.parquet("../Arquivos/Series_para_modelar/artista_profissao/")
+df_artista_profissao = spark.read.parquet("s3://datalakecaio/Trusted/CSV/artista_profissao_df/")
 
 df_artista_profissao = adicionaID(df_artista_profissao, "ArtistaProfissao")
 
@@ -178,4 +200,27 @@ tabela_fato_ator_profissao = (
 
 tabela_fato_ator_profissao_filtered = tabela_fato_ator_profissao.filter(tabela_fato_ator_profissao["AtorID"].isNotNull())
 
+tabela_fato_comp.repartition(1).write.mode("overwrite").parquet(target_path + "Series/FatoSerie/")
+df_dim_serie_comp.repartition(1).write.mode("overwrite").parquet(target_path + "Series/DimSerie/")
+df_dim_lancamento_comp.repartition(1).write.mode("overwrite").parquet(target_path + "Series/DimLancamento/")
+df_dim_ultimo_ep_comp.repartition(1).write.mode("overwrite").parquet(target_path + "Series/DimUltimoEp/")
+df_dim_status_comp.repartition(1).write.mode("overwrite").parquet(target_path + "Series/DimStatus/")
+df_dim_pais_comp.repartition(1).write.mode("overwrite").parquet(target_path + "Series/DimPais/")
+df_dim_linguagem_comp.repartition(1).write.mode("overwrite").parquet(target_path + "Series/DimLinguagem/")
+df_dim_temporadas_comp.repartition(1).write.mode("overwrite").parquet(target_path + "Series/DimTemporadas/")
+df_dim_poster_comp.repartition(1).write.mode("overwrite").parquet(target_path + "Series/DimPoster/")
+
+tabela_fato_top.repartition(1).write.mode("overwrite").parquet(target_path + "serie_top_rated/Fato_Top_Rated/")
+df_dim_serie_top.repartition(1).write.mode("overwrite").parquet(target_path + "serie_top_rated/Dim_Serie_Top/")
+df_dim_lancamento_top.repartition(1).write.mode("overwrite").parquet(target_path + "serie_top_rated/Dim_Lancamento_Top/")
+df_dim_pais_top.repartition(1).write.mode("overwrite").parquet(target_path + "serie_top_rated/Dim_Pais_Top/")
+df_dim_poster_top.repartition(1).write.mode("overwrite").parquet(target_path + "serie_top_rated/Dim_Poster_Top/")
+
+tabela_fato_ator_profissao.repartition(1).write.mode("overwrite").parquet(target_path + "Atores/Fator_Ator_Profissão/")
+df_dim_profissao.repartition(1).write.mode("overwrite").parquet(target_path + "Atores/Dim_Profissão/")
+df_dim_ator.repartition(1).write.mode("overwrite").parquet(target_path + "Atores/Dim_Ator/")
+
+
 spark.stop()
+
+
