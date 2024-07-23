@@ -214,3 +214,7 @@ assim finalizo a modelagem dimensional
 
 ![arquivo_salvo](/Sprint%209/Evidencias/Desafio%20-%20Arquivo%20salvo%20no%20Bucket.png)
 (exemplo de um arquivo que foi salvo corretamento)
+
+![catalog](/Sprint%209/Evidencias/Desafio%20-%20tabelas%20catalogadas.png)
+
+Por fim utilizo o crawler que criei na [sprint passada](/Sprint%208/README.md) e deixo as tabelas salvas no data catalog
