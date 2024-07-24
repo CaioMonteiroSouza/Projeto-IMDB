@@ -43,7 +43,8 @@ primeiro defini ja no data lake como as tabelas ficariam armazenadas
 
 essa estrutura se repete a todas as tabelas fato, apenas se adaptando a suas dimensões e nome.
 
-logo em seguida começo a desenvolver o script
+logo em seguida começo a desenvolver o script.
+(resolvo criar as tabelas diretamente no script após consultar o monitor e chegar a conclusão que é uma opção viavel)
 
 ```
 import sys
