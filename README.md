@@ -65,6 +65,14 @@ Sobre meus hobbies, sou apaixonado por musica, livros e jogos, normalmente em me
 * Continuação desafio final
 * Promover dados a camada trusted utilizando AWS Glue
 
+### Sprint 9
+
+* Modelagem dimensional para o desafio final
+
+### Sprint 10
+
+* Criação de dashboards com o QuickSight
+
 ## Sprints 
 
 1. [Sprint 1](Sprint%201/README.md)
@@ -75,3 +83,6 @@ Sobre meus hobbies, sou apaixonado por musica, livros e jogos, normalmente em me
 6. [Sprint 6](/Sprint%206/README.md)
 7. [Sprint 7](/Sprint%207/README.md)
 8. [Sprint 8](/Sprint%208/README.md)
+9. [Sprint 9](/Sprint%209/README.md)
+10. [Sprint 10](/Sprint%2010/README.md)
+

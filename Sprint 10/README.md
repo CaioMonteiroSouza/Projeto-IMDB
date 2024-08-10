@@ -88,3 +88,9 @@ Com as analises feitas podemos verificar que o Japão e os Estados unidos domina
 
 #### Estados Unidos
 ![Estados Unidos](/Sprint%2010/Evidencias/Analise%20Estados%20Unidos.png)
+
+# PDF
+
+[Pagina 1](/Sprint%2010/Evidencias/Tela%201.pdf)
+[Pagina 2](/Sprint%2010/Evidencias/tela%202.pdf)
+
