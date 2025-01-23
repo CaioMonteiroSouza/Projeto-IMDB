@@ -1,7 +1,5 @@
 ## Apresentação
 
-![foto perfil](https://avatars.githubusercontent.com/u/26350650?v=4)
-
 Este projeto tem como objetivo coletar dados de filmes do IMDb, armazená-los em um Data Lake e criar um relatório interativo utilizando o Amazon QuickSight. O desenvolvimento do projeto é dividido em sprints, cada uma focada no aprendizado de tecnologias e ferramentas essenciais para a execução das etapas.
 
 ## O que estou aprendendo?
