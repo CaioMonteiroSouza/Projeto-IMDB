@@ -2,9 +2,7 @@
 
 ![foto perfil](https://avatars.githubusercontent.com/u/26350650?v=4)
 
-Olá, sou Caio Eduardo Monteiro de Souza, moro na cidade de Franca - SP, sou estudante de **Análise e Desenvolvimento de Sistemas da Fatec Franca** e atualmente estou no terceiro semestre e esta sendo minha primeira experiência na área de tecnologia.
-
-Sobre meus hobbies, sou apaixonado por musica, livros e jogos, normalmente em meu tempo livre estou lendo, jogando ou escutando musica.
+Este projeto tem como objetivo coletar dados de filmes do IMDb, armazená-los em um Data Lake e criar um relatório interativo utilizando o Amazon QuickSight. O desenvolvimento do projeto é dividido em sprints, cada uma focada no aprendizado de tecnologias e ferramentas essenciais para a execução das etapas.
 
 ## O que estou aprendendo?
 ### Sprint 1:
